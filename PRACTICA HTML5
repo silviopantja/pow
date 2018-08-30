@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Homework</title>
+</head>
+<body>
+	<header id="aa">
+		<h1>BBB</h1>
+		<nav class="bb">
+			<ul>
+				<li><a href="#">HOME</a>
+					<ul>
+						   <li><a href="">Submenu 1</a></li>
+		               	   <li><a href="">Submenu 2</a></li>
+		               	   <li><a href="">Submenu 3</a></li>
+		               	   <li><a href="">Submenu 4</a></li>
+						
+					</ul>
+				</li>
+
+				<li><a href="#">ABOUT US</a></li>
+
+				<li><a href="#">PAGES</a>
+					<ul>
+						 <li><a href="">Submenu 1</a></li>
+		               	   <li><a href="">Submenu 2</a></li>
+		               	   <li><a href="">Submenu 3</a></li>
+		               	   <li><a href="">Submenu 4</a></li>
+					</ul>
+				</li>
+
+				<li><a href="#">FEACTURE</a></li>
+
+				<li><a href="#">ATTORNEY</a></li>
+
+				<li><a href="#">NEWS</a></li>
+
+				<li><a href="#">CONTACT US</a></li>
+			</ul>
+		</nav>
+	</header>
+</body>
+</html>

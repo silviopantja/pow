@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<title>Buscar en el contenido de una tabla</title>
+	<script language="javascript">
+		function doSearch()
+		{
+			var tableReg = document.getElementById('datos');
+			var searchText = document.getElementById('searchTerm').value.toLowerCase();
+			var cellsOfRow="";
+			var found=false;
+			var compareWith="";
+ 
+			// Recorremos todas las filas con contenido de la tabla
+			for (var i = 1; i < tableReg.rows.length; i++)
+			{
+				cellsOfRow = tableReg.rows[i].getElementsByTagName('td');
+				found = false;
+				// Recorremos todas las celdas
+				for (var j = 0; j < cellsOfRow.length && !found; j++)
+				{
+					compareWith = cellsOfRow[j].innerHTML.toLowerCase();
+					// Buscamos el texto en el contenido de la celda
+					if (searchText.length == 0 || (compareWith.indexOf(searchText) > -1))
+					{
+						found = true;
+					}
+				}
+				if(found)
+				{
+					tableReg.rows[i].style.display = '';
+				} else {
+					// si no ha encontrado ninguna coincidencia, esconde la
+					// fila de la tabla
+					tableReg.rows[i].style.display = 'none';
+				}
+			}
+		}
+	</script>
+ 
+	<style>
+		#datos	{/*border:1px solid #ccc;padding:10px;padding: 05rem;*/
+		background: #484848;
+		color: white;
+		text-align: center;
+		font-size: 21px;
+	    border: 5px solid #fff;}
+
+		#datos tr:nth-child(even) {background: #eee;}
+		#datos td {padding:5px;
+			border: 1px solid #fff;
+		    background: #484848;
+		    color: white;
+		    text-align: center;
+		    font-size: 21px;}
+		#buscar{
+			width: 300px;
+		    font-size: 22px;
+		    color: #fff;
+		    background: #383838;
+		    padding-left: 20px;
+		    text-align: center;
+		    border-radius: 5px;
+		    padding: 10px;
+		    margin: 10px;
+		}
+		
+	</style>
+
+</head>
+ 
+<body>
+	<center>
+	<h1>Buscar contnido en la tabla</h1>
+
+	<form id="buscar">
+		Buscar <input id="searchTerm" type="text" onkeyup="doSearch()" placeholder="Filtro"/>
+	</form>
+	<p>
+		<table id="datos">
+			       <tr>
+						<td>
+							Producto
+						</td>
+						<td>
+							Peso
+						</td>
+						<td>
+							Existencia
+						</td>
+						<td>
+							Expira
+						</td>
+						<td>Precio de compra</td>
+						<td>Precio de venta</td>	
+					</tr>
+					<tbody>
+					<tr>
+						<td>Arroz</td><td>25 libras</td><td>10</td><td>02/02/2019</td><td>300</td><td>350</td>
+					</tr>
+					<tr>
+						<td>Frijoles</td><td>10 libras</td><td>5</td><td>02/02/2019</td><td>200</td><td>250</td>
+					</tr>
+					<tr>
+						<td>Azucar</td><td>20 libras</td><td>7</td><td>05/04/2019</td><td>100</td><td>150</td>
+					</tr><tr>
+						<td>Cafe</td><td>5 libras</td><td>3</td><td>05/02/2019</td><td>100</td><td>120</td>
+					</tr><tr>
+						<td>Cereal</td><td>30 libras</td><td>15</td><td>25/02/2019</td><td>210</td><td>250</td>
+					</tr>
+				</tbody>
+		</table>
+	</p>
+	</center>
+</body>
+</html>
